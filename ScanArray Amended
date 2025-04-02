@@ -1,0 +1,29 @@
+def ScanArray(SearchString):
+    Index = 1
+    Total = 0
+    Error = False
+
+    while Index <= 1000 and not Error:
+        if len(ThisArray[Index]) > 5:
+            if ThisArray[Index][:4] == SearchString:
+                Total = Total + len(ThisArray[Index]) - 5
+            Index = Index + 1
+        else:
+            Error = True
+
+    if Index != 0:
+        ArrayResult = int(Total / (Index - 1))
+        print(ArrayResult)
+    else:
+        print('No matches found')
+
+
+ThisArray = ['0'] * 1000
+ArrayResult = 0
+
+ThisArray[0] = 'abcde1234567'
+ThisArray[1] = 'abcde8910'
+
+SearchString = input('Enter string to search: ')
+ScanArray(SearchString)
+

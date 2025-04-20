@@ -27,5 +27,18 @@ def InsertData():
         print('FirstEmpty', FirstEmpty, 'FirstNode', FirstNode, 'linkedlist', LinkedList)
         count += 1
 
+def OutputLinkedList():
+    global LinkedList
+    global FirstEmpty
+    global FirstNode
+    CurrentPointer = FirstNode
+    Flag = True
+    while Flag:
+        print(LinkedList[CurrentPointer][0])
+        CurrentPointer = LinkedList[CurrentPointer][1]
+        if CurrentPointer == -1:
+            Flag = False
+
 
 InsertData()
+OutputLinkedList()
